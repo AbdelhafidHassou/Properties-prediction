@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <nav class="flex justify-between items-center">
+        <div class="text-[#EEEEEE] py-3">
+            <a href="{% url 'home' %}"><h1 class="text-3xl font-bold">MaFutuSight<span class="text-[#7BC74D]"> .</span></h1></a>
+        </div>
+        <div>
+            <a href="{% url 'connection' %}">
+                <button class="font-medium text-[#7ABA78] hover:text-[#EEEEEE] duration-300 border py-3 px-9 rounded-lg border-[#7ABA78] hover:border-[#EEEEEE] mr-9">Log in</button>
+            </a>
+            <a href="{% url 'register' %}">
+                <button class="font-medium text-[#393E46] hover:text-[#EEEEEE] duration-300 border py-3 px-9 rounded-lg border-[#7ABA78] hover:border-[#1A4D2E] bg-[#7ABA78] hover:bg-[#1A4D2E]">Register</button>
+            </a>
+        </div>
+    </nav>
+    <section class="grid grid-cols-1 text-center gap-10 my-60">
+        <p class="text-xl xl:text-6xl font-bold text-[#7ABA78]">
+            PROPERTY INSIGHT: YOUR ULTIMATE DESTINATION FOR ACCURATE PROPERTY ESTIMATES AND VALUATIONS
+        </b>
+        <p class="text-[#EEEEEE] font-light text-sm xl:text-2xl">
+            Unlock the power of informed decision-making with Property Insight. Our platform offers precise property estimates and valuations, empowering you to make confident choices in the dynamic real estate market. Whether buying, selling, or investing, trust Property Insight to provide reliable data and insights for your property endeavors.
+        </p>
+    </section>
+</body>
+</html>
+{% endblock %}

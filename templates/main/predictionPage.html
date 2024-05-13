@@ -1,0 +1,99 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="flex justify-between items-center">
+        <div class="text-[#EEEEEE] py-3">
+            <a href="{% url 'home' %}"><h1 class="text-3xl font-bold">MaFutuSight<span class="text-[#7BC74D]"> .</span></h1></a>
+        </div>
+        <div>
+            <a href="{% url 'connection' %}" class="text-[#7BC74D] border-[#7BC74D] hover:border-b-2 duration-75">Log out</a>
+        </div>
+    </nav>
+    <!-- Prediction section -->
+    <form class="grid lg:grid-cols-3 grid-cols-1 text-[#EEEEEE] gap-20 lg:mt-44 mt-10">
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+            <label for="type">Type:</label>
+            <select name="type" id="" class="text-gray-500 rounded-lg">
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="riad">Riad</option>
+                <option value="house">House</option>
+            </select>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+            <label for="room">Room:</label>
+            <select name="room" id="" class="text-gray-500 rounded-lg">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+            <label for="floor">Floor:</label>
+            <select name="floor" id="" class="text-gray-500 rounded-lg">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+            <label for="location">Location:</label>
+            <select name="location" id="" class="text-gray-500 rounded-lg">
+                <option value="casablanca_finance_city">Casablanca Finance City</option>
+                <option value="anfa">Anfa</option>
+                <option value="racine">Racine</option>
+                <option value="maarif">Maarif</option>
+            </select>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+            <label for="bedroom">Bedroom:</label>
+            <select name="bedroom" id="" class="text-gray-500 rounded-lg">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+            <label for="condition">Condition:</label>
+            <select name="condition" id="" class="text-gray-500 rounded-lg ">
+                <option value="new">New</option>
+                <option value="good">Good</option>
+                <option value="bad">Bad</option>
+            </select>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+            <label for="aria">Aria:</label>
+            <select name="aria" id="" class="text-gray-500 rounded-lg ">
+                <option value="32">32 m2</option>
+                <option value="80">80 m2</option>
+                <option value="120">120 m2</option>
+                <option value="400">400 m2</option>
+            </select>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
+            <label for="bathromm">Bathromm:</label>
+            <select name="bathromm" id="" class="text-gray-500 rounded-lg ">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="grid">
+            <button class="font-medium text-[#393E46] hover:text-[#EEEEEE] duration-300 border rounded-lg border-[#7ABA78] hover:border-[#1A4D2E] bg-[#7ABA78] hover:bg-[#1A4D2E]">Calculate</button>
+        </div>
+    </form>
+</body>
+</html>
+{% endblock %}

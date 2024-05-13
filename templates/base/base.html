@@ -1,0 +1,18 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    {% tailwind_css %}
+</head>
+<body>
+    <section class="mx-auto min-h-screen bg-gradient-to-tl from-[#222831] to-[#393E46] p-9">
+        <div class="container mx-auto">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+    
+</body>
+</html>

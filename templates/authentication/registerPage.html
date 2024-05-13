@@ -1,0 +1,58 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center">
+        <div class="text-[#EEEEEE] py-3">
+            <a href="{% url 'home' %}"><h1 class="text-3xl font-bold">MaFutuSight<span class="text-[#7BC74D]"> .</span></h1></a>
+        </div>
+    </nav>
+    <!-- Section 1 -->
+    <section class="grid grid-flow-col lg:grid-rows-1 grid-rows-2 place-items-center gap-9 lg:my-24">
+        <!-- Message Section -->
+        <div class="grid grid-rows-2 gap-8">
+            <p class="text-3xl xl:text-4xl text-center font-bold text-[#7ABA78]">
+                IF YOU HAVE AN ACCOUNT CLICK <br> ON THIS BUTTON BELLOW TO LOG IN
+            </p>
+            <div class="flex items-center justify-center">
+                <a href="{% url 'connection' %}">
+                    <button class="font-medium text-[#393E46] hover:text-[#EEEEEE] duration-300 border py-3 px-9 rounded-lg border-[#7ABA78] hover:border-[#1A4D2E] bg-[#7ABA78] hover:bg-[#1A4D2E]">Log in</button>
+                </a>
+            </div>
+        </div>
+        <!-- Register Section -->
+        <div class="grid grid-flow-row content-center"> 
+            <h1 class="md:text-4xl text-3xl text-[#EEEEEE] font-bold text-center mb-8">
+                Create your account
+            </h1>
+            <form action="">
+                <div class="grid grid-cols-1 gap-4">
+                    <label for="name" class="text-[#EEEEEE]">Name</label>
+                    <input name="name" type="text" placeholder="Enter you name" class="rounded-lg text-sm text-gray-500 py-3 px-4">
+                </div>
+                <div class="grid grid-cols-1 gap-4 mt-5">
+                    <label for="email" class="text-[#EEEEEE]">Email Address</label>
+                    <input name="email" type="email" placeholder="Enter your email address" class="rounded-lg text-sm text-gray-500 py-3 px-4">
+                </div>
+                <div class="grid grid-cols-1 gap-4 mt-5">
+                    <label for="password" class="text-[#EEEEEE]">Password</label>
+                    <input name="password" type="password" placeholder="Enter you password" class="rounded-lg text-sm text-gray-500 py-3 px-4">
+                </div>
+                <div class="grid grid-cols-1 gap-4 mt-5">
+                    <label for="Conf_password" class="text-[#EEEEEE]">Confirm password</label>
+                    <input name="Conf_password" type="password" placeholder="Re-enter you password" class="rounded-lg text-sm text-gray-500 py-3 px-4">
+                </div>
+                <button type="submit" class="mt-10 font-medium text-[#393E46] hover:text-[#EEEEEE] duration-300 border py-3 px-20 rounded-lg border-[#7ABA78] hover:border-[#1A4D2E] bg-[#7ABA78] hover:bg-[#1A4D2E]">Sign in</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
+{% endblock %}
