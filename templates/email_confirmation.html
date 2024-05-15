@@ -1,0 +1,9 @@
+{% autoescape off %}
+
+Hello {{ name }}, MaFutuSight. Team Welcoming you.
+
+Please confirm your email by clicking on the following link.
+
+Confirmation link: http:{{ doamin }}{% url 'activate' uidb64=uid token=token%}
+
+{% endautoescape %}

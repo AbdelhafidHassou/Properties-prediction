@@ -8,20 +8,11 @@
     <title>Prediction</title>
 </head>
 <body>
-    <!-- Navbar Section -->
-    <nav class="flex justify-between items-center">
-        <div class="text-[#EEEEEE] py-3">
-            <a href="{% url 'home' %}"><h1 class="text-3xl font-bold">MaFutuSight<span class="text-[#7BC74D]"> .</span></h1></a>
-        </div>
-        <div>
-            <a href="{% url 'connection' %}" class="text-[#7BC74D] border-[#7BC74D] hover:border-b-2 duration-75">Log out</a>
-        </div>
-    </nav>
     <!-- Prediction section -->
     <form class="grid lg:grid-cols-3 grid-cols-1 text-[#EEEEEE] gap-20 lg:mt-44 mt-10" method="get" action="{% url 'result' %}">
         <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
             <label for="type">Type:</label>
-            <select name="type" id="" class="text-gray-500 rounded-lg">
+            <select name="type" class="text-gray-500 rounded-lg">
                 <option value="2">Apartment</option>
                 <option value="3">Villa</option>
                 <option value="0">Riad</option>
@@ -31,7 +22,7 @@
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
             <label for="room">Room:</label>
-            <select name="room" id="" class="text-gray-500 rounded-lg">
+            <select name="room" class="text-gray-500 rounded-lg">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -51,7 +42,7 @@
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
             <label for="floor">Floor:</label>
-            <select name="floor" id="" class="text-gray-500 rounded-lg">
+            <select name="floor" class="text-gray-500 rounded-lg">
                 <option value="1.0">1</option>
                 <option value="5.0">5</option>
                 <option value="3.0">3</option>
@@ -70,7 +61,7 @@
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
             <label for="location">Location:</label>
-            <select name="location" id="" class="text-gray-500 rounded-lg">
+            <select name="location" class="text-gray-500 rounded-lg">
                 <option value="0">Anfa</option>
                 <option value="1">La Gironde</option>
                 <option value="2">Bourgogne Ouest</option>
@@ -102,7 +93,7 @@
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
             <label for="bedroom">Bedrooms:</label>
-            <select name="bedroom" id="" class="text-gray-500 rounded-lg">
+            <select name="bedroom" class="text-gray-500 rounded-lg">
                 <option value="2.0">2</option>
                 <option value="3.0">3</option>
                 <option value="5.0">5</option>
@@ -117,7 +108,7 @@
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
             <label for="condition">Condition:</label>
-            <select name="condition" id="" class="text-gray-500 rounded-lg ">
+            <select name="condition" class="text-gray-500 rounded-lg ">
                 <option value="0">Bon état</option>
                 <option value="1">Nouveau</option>
                 <option value="1">À rénover</option>
@@ -125,7 +116,7 @@
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
             <label for="aria">Aria:</label>
-            <select name="aria" id="" class="text-gray-500 rounded-lg ">
+            <select name="aria" class="text-gray-500 rounded-lg ">
                 <option value="86">86</option>
                 <option value="180">180</option>
                 <option value="120">120</option>
@@ -521,7 +512,7 @@
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 items-center">
             <label for="bathromm">Bathroms:</label>
-            <select name="bathromm" id="" class="text-gray-500 rounded-lg ">
+            <select name="bathromm" class="text-gray-500 rounded-lg ">
                 <option value="1.0">1</option>
                 <option value="2.0">2</option>
                 <option value="3.0">3</option>
@@ -536,10 +527,10 @@
         <div class="grid">
             <button type="submit" class="font-medium text-[#393E46] hover:text-[#EEEEEE] duration-300 border rounded-lg border-[#7ABA78] hover:border-[#1A4D2E] bg-[#7ABA78] hover:bg-[#1A4D2E]">Calculate</button>
         </div>
-        <div class="row">
-            <h2>{{result2}}</h2>
-        </div>
     </form>
+    <div class="flex justify-center w-full text-center mt-32 ">
+        <h2 class="text-6xl font-bold text-[#EEEEEE]">The predicted price: <span class="text-[#7BC74D] text-8xl">{{ result }}</span> MAD</h2>
+    </div>
 </body>
 </html>
 {% endblock %}

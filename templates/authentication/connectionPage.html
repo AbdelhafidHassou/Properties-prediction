@@ -8,12 +8,6 @@
     <title>Connection</title>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="flex justify-between items-center">
-        <div class="text-[#EEEEEE] py-3">
-            <a href="{% url 'home' %}"><h1 class="text-3xl font-bold">MaFutuSight<span class="text-[#7BC74D]"> .</span></h1></a>
-        </div>
-    </nav>
     <!-- Section 1 -->
     <section class="grid grid-flow-col lg:grid-rows-1 grid-rows-2 place-items-center gap-9 lg:my-48 my-20">
         <!-- Sign in Section -->
@@ -21,16 +15,17 @@
             <h1 class="md:text-4xl text-2xl text-[#EEEEEE] font-bold text-center mb-8">
                 Sign in to your account
             </h1>
-            <form class="" action="">
+            <form method="post">
+                {% csrf_token %}
                 <div class="grid grid-cols-1 gap-4">
-                    <label for="email" class="text-[#EEEEEE]">Email Address</Address></label>
-                    <input name="email" type="email" placeholder="Enter you email address" class="rounded-lg text-sm text-gray-500 py-3 px-4">
+                    <label class="text-[#EEEEEE]">Username</label>
+                    <input name="name" type="text" placeholder="Enter you name" class="rounded-lg text-sm text-gray-500 py-3 px-4" required>
                 </div>
                 <div class="grid grid-cols-1 gap-4 mt-5">
-                    <label for="password" class="text-[#EEEEEE]">Password</label>
-                    <input name="password" type="password" placeholder="Enter you password" class="rounded-lg text-sm text-gray-500 py-3 px-4">
+                    <label class="text-[#EEEEEE]">Password</label>
+                    <input name="password" type="password" placeholder="Enter you password" class="rounded-lg text-sm text-gray-500 py-3 px-4" required>
                 </div>
-                <button class="mt-10 font-medium text-[#393E46] hover:text-[#EEEEEE] duration-300 border py-3 px-9 rounded-lg border-[#7ABA78] hover:border-[#1A4D2E] bg-[#7ABA78] hover:bg-[#1A4D2E] w-full">Sign in</button>
+                <button type="submit" class="mt-10 font-medium text-[#393E46] hover:text-[#EEEEEE] duration-300 border py-3 px-9 rounded-lg border-[#7ABA78] hover:border-[#1A4D2E] bg-[#7ABA78] hover:bg-[#1A4D2E] w-full">Sign in</button>
             </form>
         </div>
         <div class="grid grid-rows-2 lg:gap-8 gap-1">

@@ -9,10 +9,40 @@
 <body>
     <section class="mx-auto min-h-screen bg-gradient-to-tl from-[#222831] to-[#393E46] p-9">
         <div class="container mx-auto">
+            {% block navbar %}
+                <nav class="flex justify-between items-center">
+                    <div class="text-[#EEEEEE] py-3">
+                        <a href="{% url 'home' %}"><h1 class="text-3xl font-bold">MaFutuSight<span class="text-[#7BC74D]"> .</span></h1></a>
+                    </div>
+                    <div>
+                        {% if user.is_authenticated %}
+                            <span class="mx-5 text-[#7BC74D] uppercase">Welcome {{ firstname }}</span>
+                            <button class="text-[#7BC74D] border-[#7BC74D] hover:border-b-2 duration-75"><a href="{% url 'signout' %}">Log out</a></button>
+                        {% else %}
+                            <button class="font-medium text-[#7ABA78] hover:text-[#EEEEEE] duration-300 border py-3 px-9 rounded-lg border-[#7ABA78] hover:border-[#EEEEEE] mr-9"><a href="{% url 'connection' %}">Log in</a></button>
+                            <button class="font-medium text-[#393E46] hover:text-[#EEEEEE] duration-300 border py-3 px-9 rounded-lg border-[#7ABA78] hover:border-[#1A4D2E] bg-[#7ABA78] hover:bg-[#1A4D2E]"><a href="{% url 'register' %}">Register</a></button>
+                        {% endif %}
+                    </div>
+                </nav>
+            {% endblock %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="flex justify-between text-black shadow-inner rounded p-3 bg-yellow-400 my-10">
+                <p class="self-center"><strong>Info </strong>{{ message }}</p>
+                <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
+              </div>
+                {% endfor %}
+            {% endif %}
             {% block content %}
             {% endblock %}
         </div>
     </section>
-    
+    <script>
+        var alert_del = document.querySelectorAll('.alert-del');
+            alert_del.forEach((x) => x.addEventListener('click', function () {
+                x.parentElement.classList.add('hidden');
+            })
+        );
+    </script>
 </body>
 </html>

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from pyexpat.errors import messages
+from django.shortcuts import redirect, render
 from django.http import JsonResponse
 import numpy as np
 import matplotlib.pyplot as plt 
@@ -14,7 +15,7 @@ def prediction(request):
 
 def result(request):
     
-    df2 = pd.read_csv(r'C:\Users\achel\Downloads\mubawab_listings_eda.csv')
+    df2 = pd.read_csv('static/file/mubawab_listings_eda.csv')
     df2.dropna(inplace=True)  
     df3 = df2.drop(['Other_tags'], axis=1)
     df5=df3
@@ -103,6 +104,6 @@ def result(request):
 
     pred=model.predict(np.array([var1,var2,var3,var4,var5,var6,var7,var8]).reshape(1,-1))
     pred=round(pred[0])
-    price="the predicted price is MAD "+str(pred)
-    print(price)
-    return render(request,"main/predictionPage.html",{"result2":price})
+    price = str(pred)
+    return render(request,"main/predictionPage.html",{"result":price})
+
