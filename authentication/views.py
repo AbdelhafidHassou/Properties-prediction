@@ -82,7 +82,7 @@ def register(request):
             settings.EMAIL_HOST_USER,
             [user.email],
         )
-        email.fail_silently = True
+        email.fail_silently = False
         email.send()
         
         messages.success(request, "Your account has been created successfully.")
