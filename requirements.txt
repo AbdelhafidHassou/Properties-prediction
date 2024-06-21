@@ -1,0 +1,8 @@
+django
+django_browser_reload
+tailwind
+matplotlib
+pandas
+seaborn
+scikit-learn
+django-tailwind[reload]
